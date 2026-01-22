@@ -1,30 +1,36 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
     font-family: "Poppins", sans-serif;
 }
 
+/* ---------- NAVBAR ---------- */
 .navbar{
     background-color: #FD6569;
-    padding: 10px;
+    padding: 15px;
 }
 
+/* ---------- MAIN CONTAINER ---------- */
 .container{
-    padding: 10px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+/* ---------- BOOK CARD ---------- */
 .book-container{
     padding: 15px;
-    width: 25%;
+    width: 300px;
+    max-width: 90%;
     background-color: black;
     border-radius: 10px;
     color: white;
-    margin: 30px;
-    display: inline-block;
-    vertical-align: top;
+    margin: 15px;
 }
 
 .book-container h2{
@@ -35,101 +41,114 @@ body{
     background-color: #FD6569;
     color: black;
     border-radius: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 6px 12px;
     border: none;
     margin-top: 10px;
-    cursor: grab;
+    cursor: pointer;
 }
 
+/* ---------- ADD BUTTON ---------- */
 .add-button{
     background-color: #FD6569;
     color: black;
-    border-radius: 100px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 40px;
+    border-radius: 50%;
+    padding: 18px 25px;
+    font-size: 35px;
     border: none;
-    position: fixed ;
-    bottom: 30px;
-    right: 30px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
 }
 
+/* ---------- POPUP OVERLAY ---------- */
 .popup-overlay{
-    background-color:black;
+    background-color: black;
     opacity: 0.7;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 1;
     display: none;
-    
 }
 
+/* ---------- POPUP BOX ---------- */
 .popup-box{
     background-color: #FD6569;
-    width: 40%;
-    padding: 40px;
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
     border-radius: 10px;
-    position: absolute;
-    top: 20%;
-    left: 30%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
     display: none;
-    
 }
 
-.popup-box input{
+/* ---------- INPUTS ---------- */
+.popup-box input,
+.popup-box textarea{
     background: transparent;
     border: none;
     width: 100%;
-    margin: 5px;
-    padding: 5px;
-    font-size: 20px;
-    border-bottom: solid black 2px;
-}
-
-
-.popup-box textarea{
-    background: transparent;
-    width: 100%;
-    margin: 5px;
-    padding: 5px;
-    font-size: 20px;
-    border: solid black 3px;
-}
-
-.popup-box input::placeholder{
+    margin: 8px 0;
+    padding: 8px;
+    font-size: 18px;
     color: black;
 }
 
+.popup-box input{
+    border-bottom: solid black 2px;
+}
+
+.popup-box textarea{
+    border: solid black 2px;
+    resize: none;
+}
+
+/* ---------- PLACEHOLDER ---------- */
+.popup-box input::placeholder,
 .popup-box textarea::placeholder{
     color: black;
 }
 
+/* ---------- POPUP BUTTONS ---------- */
 .popup-box button{
     background-color: black;
-    padding-left:20px ;
-    padding-right: 20px;
+    padding: 10px 20px;
     border: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
     color: white;
     margin: 5px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
-.popup-box input:focus{
-    outline: none;
-}
-
+/* ---------- REMOVE OUTLINE ---------- */
+.popup-box input:focus,
 .popup-box textarea:focus{
     outline: none;
 }
 
+/* ---------- MOBILE ONLY ---------- */
+@media (max-width: 600px){
+
+    .navbar h1{
+        font-size: 20px;
+    }
+
+    .book-container{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .add-button{
+        font-size: 28px;
+        padding: 15px 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
